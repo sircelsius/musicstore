@@ -19,6 +19,6 @@
 <% @artist.songs.each do |song| %>
 <%= song.name %>
 <% end %>
-
+<p>
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>
