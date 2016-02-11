@@ -15,5 +15,10 @@
   <%= @artist.country %>
 </p>
 
+<p>Songs from Artist</p>
+<% @artist.songs.each do |song| %>
+<%= song.name %>
+<% end %>
+
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>

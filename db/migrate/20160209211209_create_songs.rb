@@ -5,6 +5,7 @@ class CreateSongs < ActiveRecord::Migration
       t.string :genre
       t.integer :duration
 
+
       t.timestamps null: false
     end
   end

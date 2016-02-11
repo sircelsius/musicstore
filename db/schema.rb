@@ -11,9 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160209211209) do
-
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20160211100418) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "first_name"
@@ -29,6 +27,9 @@ ActiveRecord::Schema.define(version: 20160209211209) do
     t.integer  "duration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "artist_id"
   end
+
+  add_index "songs", ["artist_id"], name: "index_songs_on_artist_id"
 
 end

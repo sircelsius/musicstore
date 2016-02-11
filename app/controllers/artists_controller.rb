@@ -5,21 +5,39 @@ class ArtistsController < ApplicationController
   # GET /artists.json
   def index
     @artists = Artist.all
+
+    respond_to do |format|
+      format.html
+      format.json {render json: @artist}
   end
+end
 
   # GET /artists/1
   # GET /artists/1.json
   def show
+    @artist = Artist.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.json {render json: @artist}
   end
+end
 
   # GET /artists/new
   def new
     @artist = Artist.new
+    respond_to do |format|
+      format.html
+      format.json {render json: @artist}
   end
+end
 
   # GET /artists/1/edit
   def edit
+    respond_to do |format|
+      format.html
+      format.json {render json: @artist}
   end
+end
 
   # POST /artists
   # POST /artists.json
