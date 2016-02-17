@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
+<h1>Artists info</h1>
+<p>
+  <strong>Last name:</strong>
+  <%= @artist.last_name %>
+</p>
 
 <p>
   <strong>First name:</strong>
@@ -6,19 +11,17 @@
 </p>
 
 <p>
-  <strong>Last name:</strong>
-  <%= @artist.last_name %>
-</p>
-
-<p>
   <strong>Country:</strong>
   <%= @artist.country %>
 </p>
+<br>
+<p><strong>Songs from Artist</strong></p>
+<% @artist.songs.each do |song| %><p>
+<%= song.title %>
+<% end %></p>
 
-<p>Songs from Artist</p>
-<% @artist.songs.each do |song| %>
-<%= song.name %>
-<% end %>
-<p>
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>
+<br>
+<%= link_to 'Home', root_path %> |
+<%= link_to 'Back', artists_path %> |
+<%= link_to "Edit", edit_artist_path( @artist.id ) %> |
+<%= link_to "Delete", artist_path( @artist.id ), method: :delete, data: { confirm: "Are you sure?" } %>
