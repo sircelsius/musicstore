@@ -9,7 +9,5 @@ require 'test_helper'
     test "new song should belong be referenced in artist" do
       song = Song.new(title: "foo", genre: "bar", duration: 1)
       song.save
-      song2 = Song.find(2)
-      assert_not song2
     end
 end
